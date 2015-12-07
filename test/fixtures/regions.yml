@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  opening_date: 2015-12-05
+  country: 
+
+two:
+  name: MyString
+  opening_date: 2015-12-05
+  country: 
