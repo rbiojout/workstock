@@ -1,0 +1,15 @@
+<%# add navigation links to this file %>
+
+
+<% if customer_signed_in? %>
+    <li><%= link_to 'Edit account customer', edit_customer_registration_path %></li>
+    <li><%= link_to 'Sign out customer', destroy_customer_session_path, :method=>'delete' %></li>
+<% else %>
+    <li><%= link_to 'Sign in customer', new_customer_session_path %></li>
+    <li><%= link_to 'Sign up customer', new_customer_registration_path %></li>
+<% end %>
+<li><%= link_to 'Customers', customers_path %></li>
+<li><%= link_to 'Employees', employees_path %></li>
+<li><%= link_to 'Countries', countries_path %></li>
+<li><%= link_to 'Regions', regions_path %></li>
+<li><%= link_to 'ZipCodes', zip_codes_path %></li>

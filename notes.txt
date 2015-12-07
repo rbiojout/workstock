@@ -1,0 +1,38 @@
+chucky
+
+2147-D32242T
+00001"SYStKDlt1xzXMxPtm5n9IHlo
+lGeIrqgvDD3QxWk8gFKvB83XRF74z9
+8"dPuUhdODEIFTp0txKahF1jru0tf3
+
+####install gems
+
+scaffold Customers
+rails g scaffold Customers name:string first_name:string mobile:string picture:string
+
+install Devise for Customer
+config.scoped_views = true
+rails generate devise:views customers
+
+
+#### Add some layout
+
+scaffold Employees
+rails g scaffold Employee name:string first_name:string entry_date:date mobile:string picture:string role:string
+rails generate devise:views employees
+
+### easy forms with simple_form
+don't forget country_select
+look at http://www.ct2c.fr/blog/starter-app-ruby-on-rails-partie-04
+add an helper for the preview of images
+
+##### Set-up Activ Admin
+gem activ_admin
+rails g active_admin:install
+
+interesting add-ons https://viget.com/extend/8-insanely-useful-activeadmin-customizations
+
+move css to vendor/assets to keep the CSS work
+
+IMPORTANT to scaffold use option rails g scaffold test name:string -c=scaffold_controller
+

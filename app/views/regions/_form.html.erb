@@ -1,0 +1,22 @@
+<%= simple_form_for(@region) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :country %>
+    <%= f.input :name %>
+    <%= f.input :opening_date, as: :date_picker %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $('.datetimepicker').datetimepicker({
+        showTodayButton: true,
+        sideBySide: true
+    });
+</script>
+
+
