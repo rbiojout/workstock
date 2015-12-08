@@ -18,7 +18,7 @@ class RegionsControllerTest < ActionController::TestCase
 
   test "should create region" do
     assert_difference('Region.count') do
-      post :create, region: { country: @region.country, name: @region.name, opening_date: @region.opening_date }
+      post :create, region: { country_id: @region.country, name: @region.name, opening_date: @region.opening_date }
     end
 
     assert_redirected_to region_path(assigns(:region))

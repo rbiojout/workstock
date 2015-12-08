@@ -18,7 +18,7 @@ class EmployeesControllerTest < ActionController::TestCase
 
   test "should create employee" do
     assert_difference('Employee.count') do
-      post :create, employee: { entry_date: @employee.entry_date, first_name: @employee.first_name, mobile: @employee.mobile, name: @employee.name, picture: @employee.picture, role: @employee.role }
+      post :create, employee: { email: 'test3@aol.com', password: 'password01', entry_date: @employee.entry_date, first_name: @employee.first_name, mobile: @employee.mobile, name: @employee.name, picture: @employee.picture, role: @employee.role }
     end
 
     assert_redirected_to employee_path(assigns(:employee))

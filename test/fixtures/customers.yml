@@ -5,9 +5,11 @@ one:
   first_name: MyString
   mobile: MyString
   picture: MyString
+  email: test1@aol.com
 
 two:
   name: MyString
   first_name: MyString
   mobile: MyString
   picture: MyString
+  email: test2@aol.com

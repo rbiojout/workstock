@@ -18,7 +18,7 @@ class ZipCodesControllerTest < ActionController::TestCase
 
   test "should create zip_code" do
     assert_difference('ZipCode.count') do
-      post :create, zip_code: { latitude: @zip_code.latitude, longitude: @zip_code.longitude, name: @zip_code.name, region: @zip_code.region }
+      post :create, zip_code: { latitude: @zip_code.latitude, longitude: @zip_code.longitude, name: @zip_code.name, region_id: @zip_code.region }
     end
 
     assert_redirected_to zip_code_path(assigns(:zip_code))

@@ -7,6 +7,7 @@ one:
   mobile: MyString
   picture: MyString
   role: MyString
+  email: test1@aol.com
 
 two:
   name: MyString
@@ -15,3 +16,4 @@ two:
   mobile: MyString
   picture: MyString
   role: MyString
+  email: test2@aol.com

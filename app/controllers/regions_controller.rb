@@ -1,4 +1,4 @@
-class RegionsController < InheritedResources::Base
+class RegionsController < ApplicationController
 
   before_action :set_region, only: [:show, :edit, :update, :destroy]
 
@@ -70,7 +70,7 @@ class RegionsController < InheritedResources::Base
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def region_params
-    params.require(:region).permit(:name, :opening_date, :country_id)
+    params.require(:region).permit(:name, :opening_date, :country_id )
   end
 
 

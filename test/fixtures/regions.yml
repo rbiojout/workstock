@@ -3,9 +3,9 @@
 one:
   name: MyString
   opening_date: 2015-12-05
-  country: 
+  country: one
 
 two:
   name: MyString
   opening_date: 2015-12-05
-  country: 
+  country: two
