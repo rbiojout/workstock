@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205172237) do
+ActiveRecord::Schema.define(version: 20151208165141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,23 @@ ActiveRecord::Schema.define(version: 20151205172237) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "full_address"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.integer  "zip_code_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "addresses", ["user_type", "user_id"], name: "index_addresses_on_user_type_and_user_id", using: :btree
+  add_index "addresses", ["zip_code_id"], name: "index_addresses_on_zip_code_id", using: :btree
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -156,4 +173,5 @@ ActiveRecord::Schema.define(version: 20151205172237) do
 
   add_index "zip_codes", ["region_id"], name: "index_zip_codes_on_region_id", using: :btree
 
+  add_foreign_key "addresses", "zip_codes"
 end

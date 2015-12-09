@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
+  get 'static_pages/help'
+
+  get 'static_pages/faq'
+
+  get 'static_pages/contact'
+
+  resources :addresses
   resources :zip_codes
   resources :regions
   resources :countries

@@ -16,6 +16,9 @@
 //= require bootstrap-datetimepicker
 //= require pickers
 //= require jquery_ujs
+//= require jquery.geocomplete
+//= require underscore
+//= require gmaps/google
 //= require turbolinks
 //= require_tree .
 

@@ -6,7 +6,9 @@ class ImagePreviewInput < SimpleForm::Inputs::FileInput
     # check if there's an uploaded file (eg: edit mode or form not saved)
     if object.send("#{attribute_name}?")
       # append preview image to output
+      out << "<div>".html_safe
       out << template.image_tag(object.send(attribute_name).tap {|o| break o.send(version) if version}.send('url'))
+      out << "</div>".html_safe
     end
     # allow multiple submissions without losing the tmp version
     out << @builder.hidden_field("#{attribute_name}_cache").html_safe

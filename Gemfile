@@ -52,6 +52,10 @@ gem 'fullcalendar-rails'
 # use geocoder for addresse feed and other google maps tools with jquery.js
 gem 'geocoder'
 
+# render maps
+gem 'underscore-rails'
+gem 'gmaps4rails'
+
 # use easy form templates with simple form
 gem 'simple_form'
 gem "country_select"

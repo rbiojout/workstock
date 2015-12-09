@@ -6,4 +6,6 @@ class Employee < ActiveRecord::Base
 
   mount_uploader :picture, PictureUploader
 
+  has_one :address, as: :user
+
 end
