@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  work_day_id: 
+  slot_id: 
+
+two:
+  work_day_id: 
+  slot_id: 
