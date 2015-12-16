@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208165141) do
+ActiveRecord::Schema.define(version: 20151216204621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(version: 20151208165141) do
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
   add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
 
+  create_table "customers_work_grids", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "work_grid_id"
+  end
+
+  add_index "customers_work_grids", ["customer_id"], name: "index_customers_work_grids_on_customer_id", using: :btree
+  add_index "customers_work_grids", ["work_grid_id"], name: "index_customers_work_grids_on_work_grid_id", using: :btree
+
   create_table "employees", force: :cascade do |t|
     t.string   "name"
     t.string   "first_name"
@@ -111,6 +119,14 @@ ActiveRecord::Schema.define(version: 20151208165141) do
   end
 
   add_index "regions", ["country_id"], name: "index_regions_on_country_id", using: :btree
+
+  create_table "slots", force: :cascade do |t|
+    t.datetime "start_time"
+    t.integer  "duration"
+    t.boolean  "prefered"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "staffs", force: :cascade do |t|
     t.date     "entryDate"
@@ -162,6 +178,22 @@ ActiveRecord::Schema.define(version: 20151208165141) do
   add_index "users", ["profile_id", "profile_type"], name: "index_users_on_profile_id_and_profile_type", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "work_days", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "work_grids", force: :cascade do |t|
+    t.integer  "work_day_id"
+    t.integer  "slot_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "work_grids", ["slot_id"], name: "index_work_grids_on_slot_id", using: :btree
+  add_index "work_grids", ["work_day_id"], name: "index_work_grids_on_work_day_id", using: :btree
+
   create_table "zip_codes", force: :cascade do |t|
     t.string   "name"
     t.float    "latitude"
@@ -174,4 +206,6 @@ ActiveRecord::Schema.define(version: 20151208165141) do
   add_index "zip_codes", ["region_id"], name: "index_zip_codes_on_region_id", using: :btree
 
   add_foreign_key "addresses", "zip_codes"
+  add_foreign_key "work_grids", "slots"
+  add_foreign_key "work_grids", "work_days"
 end

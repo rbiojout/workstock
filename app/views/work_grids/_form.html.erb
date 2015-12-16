@@ -1,0 +1,12 @@
+<%= simple_form_for(@work_grid) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :work_day %>
+    <%= f.association :slot %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

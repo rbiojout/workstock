@@ -4,8 +4,9 @@ class Employee < ActiveRecord::Base
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable
 
+  # detail informations
   mount_uploader :picture, PictureUploader
-
   has_one :address, as: :user
+
 
 end

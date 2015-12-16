@@ -41,7 +41,7 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 
 # add datetime picker with bootstrap
-#gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-datepicker-rails'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 

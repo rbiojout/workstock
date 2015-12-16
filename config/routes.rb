@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :work_grids
+  resources :work_days
+  resources :slots
   get 'static_pages/home'
 
   get 'static_pages/help'

@@ -38,3 +38,8 @@ IMPORTANT to scaffold use option rails g scaffold test name:string -c=scaffold_c
 
 rails g scaffold address full_address:string address1:string address2:string city:string zip_code:references latitude:float longitude:float user:references -c=scaffold_controller
 
+rails g scaffold slot start_time:datetime duration:integer prefered:boolean -c=scaffold_controller
+rails g scaffold work_day name:string  -c=scaffold_controller
+rails g scaffold work_grid work_day:references slot:references  -c=scaffold_controller
+rails g migration link_customers_to_work_grids
+

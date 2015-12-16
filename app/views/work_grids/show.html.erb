@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Work day:</strong>
+  <%= @work_grid.work_day %>
+</p>
+
+<p>
+  <strong>Slot:</strong>
+  <%= @work_grid.slot %>
+</p>
+
+<%= link_to 'Edit', edit_work_grid_path(@work_grid) %> |
+<%= link_to 'Back', work_grids_path %>

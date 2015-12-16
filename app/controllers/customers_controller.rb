@@ -15,6 +15,9 @@ class CustomersController < ApplicationController
   # GET /customers/new
   def new
     @customer = Customer.new
+    #preselect all prefered
+    @customer.work_grids = WorkGrid.joins(:slot).where('slots.prefered' => true )
+    #logger.debug('...#{@customer.work_grids}')
   end
 
   # GET /customers/1/edit
@@ -25,7 +28,6 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-
     respond_to do |format|
       if @customer.save
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
@@ -69,6 +71,7 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:email, :password, :name, :first_name, :mobile, :picture)
+      #params.require(:customer).permit(:email, :password, :name, :first_name, :mobile, :picture)
+      params.require(:customer).permit(:name, :first_name, :mobile, :picture, { :work_grid_ids => [] })
     end
 end

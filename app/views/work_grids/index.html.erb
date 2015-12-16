@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Work Grids</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Work day</th>
+      <th>Slot</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_grids.each do |work_grid| %>
+      <tr>
+        <td><%= work_grid.work_day %></td>
+        <td><%= work_grid.slot %></td>
+        <td><%= link_to 'Show', work_grid %></td>
+        <td><%= link_to 'Edit', edit_work_grid_path(work_grid) %></td>
+        <td><%= link_to 'Destroy', work_grid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work grid', new_work_grid_path %>

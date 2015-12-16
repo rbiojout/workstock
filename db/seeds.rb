@@ -5,4 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')Employee.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+Employee.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+WorkDay.create(name: 'Lundi')
+WorkDay.create(name: 'Mardi')
+WorkDay.create(name: 'Mercredi')
+WorkDay.create(name: 'Jeudi')
+WorkDay.create(name: 'Vendredi')
+WorkDay.create(name: 'Samedi')
+WorkDay.create(name: 'Dimanche')
