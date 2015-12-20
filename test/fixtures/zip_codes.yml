@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: 75001
   latitude: 1.5
   longitude: 1.5
   region: one
 
 two:
-  name: MyString
+  name: 75002
   latitude: 1.5
   longitude: 1.5
   region: two

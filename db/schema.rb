@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216204621) do
+ActiveRecord::Schema.define(version: 20151218180342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,29 @@ ActiveRecord::Schema.define(version: 20151216204621) do
   end
 
   add_index "regions", ["country_id"], name: "index_regions_on_country_id", using: :btree
+
+  create_table "regions_services", force: :cascade do |t|
+    t.integer "region_id"
+    t.integer "service_id"
+  end
+
+  add_index "regions_services", ["region_id"], name: "index_regions_services_on_region_id", using: :btree
+  add_index "regions_services", ["service_id"], name: "index_regions_services_on_service_id", using: :btree
+
+  create_table "services", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "services_regions", force: :cascade do |t|
+    t.integer "service_id"
+    t.integer "region_id"
+  end
+
+  add_index "services_regions", ["region_id"], name: "index_services_regions_on_region_id", using: :btree
+  add_index "services_regions", ["service_id"], name: "index_services_regions_on_service_id", using: :btree
 
   create_table "slots", force: :cascade do |t|
     t.datetime "start_time"

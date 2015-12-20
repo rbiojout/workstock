@@ -10,9 +10,6 @@ class StaticPagesController < ApplicationController
   end
 
   def help
-    @options = [[0],[1]]
-    @user = Array.new
-    @user.options = [[0],[1]]
   end
 
   def faq

@@ -40,6 +40,9 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 
+# add a WISIWYG HTML editor for bootstrap
+gem 'bootstrap-wysihtml5-rails'
+
 # add datetime picker with bootstrap
 gem 'bootstrap-datepicker-rails'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true

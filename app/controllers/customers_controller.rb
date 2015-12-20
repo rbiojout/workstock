@@ -12,6 +12,14 @@ class CustomersController < ApplicationController
   def show
   end
 
+
+  # POST /customers/1
+  # POST /customers/1.json
+  def detail
+    @customer = Customer.find(params[:id])
+  end
+
+
   # GET /customers/new
   def new
     @customer = Customer.new
@@ -72,6 +80,6 @@ class CustomersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
       #params.require(:customer).permit(:email, :password, :name, :first_name, :mobile, :picture)
-      params.require(:customer).permit(:name, :first_name, :mobile, :picture, { :work_grid_ids => [] })
+      params.require(:customer).permit(:email, :password, :name, :first_name, :mobile, :picture, { :work_grid_ids => [] })
     end
 end

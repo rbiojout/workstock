@@ -2,7 +2,8 @@
 
 
 <% if customer_signed_in? %>
-    <li><%= link_to 'Edit account customer', edit_customer_registration_path %></li>
+    <li><%= link_to 'Edit my account', edit_customer_registration_path %></li>
+    <li><%= link_to 'Edit my details', detail_customer_path(current_customer) %></li>
     <li><%= link_to 'Sign out customer', destroy_customer_session_path, :method=>'delete' %></li>
 <% else %>
     <li><%= link_to 'Sign in customer', new_customer_session_path %></li>
@@ -24,6 +25,8 @@
     <li><%= link_to 'Slots', slots_path %></li>
     <li><%= link_to 'WorKays', work_days_path %></li>
     <li><a href="#">One more separated link</a></li>
+    <li role="separator" class="divider"></li>
+    <li><%= link_to 'Services', services_path %></li>
   </ul>
 </li>
 

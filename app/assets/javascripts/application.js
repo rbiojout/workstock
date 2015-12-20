@@ -15,6 +15,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require bootstrap-datepicker
+//= require bootstrap-wysihtml5
 //= require pickers
 //= require jquery_ujs
 //= require jquery.geocomplete

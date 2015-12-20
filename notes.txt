@@ -42,4 +42,5 @@ rails g scaffold slot start_time:datetime duration:integer prefered:boolean -c=s
 rails g scaffold work_day name:string  -c=scaffold_controller
 rails g scaffold work_grid work_day:references slot:references  -c=scaffold_controller
 rails g migration link_customers_to_work_grids
+rails g scaffold services name:string description:string -c=scaffold_controller
 

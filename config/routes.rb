@@ -1,7 +1,26 @@
 Rails.application.routes.draw do
+  resources :services
   resources :work_grids
   resources :work_days
   resources :slots
+  resources :addresses
+  resources :zip_codes
+  resources :regions
+  resources :countries
+  resources :employees
+  devise_for :employees, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  devise_for :customers
+  resources :customers do
+    member do
+             get 'detail'
+           end
+
+           collection do
+             #get 'sold'
+           end
+  end
+
   get 'static_pages/home'
 
   get 'static_pages/help'
@@ -10,15 +29,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
-  resources :addresses
-  resources :zip_codes
-  resources :regions
-  resources :countries
-  devise_for :employees, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  resources :employees
-  devise_for :customers
-  resources :customers
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

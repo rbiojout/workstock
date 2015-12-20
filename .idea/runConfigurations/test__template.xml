@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="test: template" type="RakeRunConfigurationType" factoryName="Rake">
+    <log_file path="$MODULE_DIR$/../template/log/test.log" checked="true" skipped="true" show_all="false" alias="Test Log" />
     <module name="template" />
     <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
     <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
