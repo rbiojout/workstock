@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d8806b1-0307-44c8-a5fb-d065b393d508" name="Default" comment="added services">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/service.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/service_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/services.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/services_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="template.iws" />
@@ -1251,7 +1255,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450702330996</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added services">
+      <created>1450702675537</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1450702675537</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
