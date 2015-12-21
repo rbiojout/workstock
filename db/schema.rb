@@ -129,10 +129,8 @@ ActiveRecord::Schema.define(version: 20151218180342) do
   add_index "regions_services", ["service_id"], name: "index_regions_services_on_service_id", using: :btree
 
   create_table "services", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string "name"
+    t.text   "description"
   end
 
   create_table "services_regions", force: :cascade do |t|
